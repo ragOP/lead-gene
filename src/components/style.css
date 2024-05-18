@@ -1,0 +1,147 @@
+  .top-nav {
+    background-color: #2061b7;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .top-nav p {
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .second-div {
+    background: linear-gradient(to right, #BCCCE8, #87A5D7);
+    color: white;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo{
+    width: 200px;
+  }
+  .call-now{
+    width: 150px;
+  }
+  .main-div{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 30px 10px;
+  }
+  .main-div > img{
+    width: 100px;
+  }
+  .main-img{
+    width: 100% !important;
+    padding-top: 20px;
+  }
+  .main-title{
+    font-size: 23px;
+    padding-top: 20px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 34px;
+  }
+  .main-title > span {
+    background-color: yellow;
+  }
+  .place-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 20px;
+  }
+  .place{
+    height: 300px;
+    width: 100%;
+    background-color: #2061b7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .place > p {
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+  }
+  .main-lower{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 20px;
+  }
+  .lower-box{
+    background-color: #2061b7;
+    color: #fff;
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  .top{
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  .top > span {
+    color: yellow;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .mid{
+    font-size: 18px;
+    margin-bottom: 50px;
+    text-align: end;
+  }
+  .bottom{
+    font-size: 18px;
+  }
+  .bottom > span {
+    color: yellow;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .btn-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .btn-main > p { 
+    background-color: rgb(3, 206, 3);
+    color: #fff;
+    padding: 20px 60px;
+    border-radius: 30px;
+    font-size: 26px;
+    font-weight: 800;
+  }
+  .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0px 50px;
+    gap: 10px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .gif{
+    width: 10px;
+  }
+  .txt{
+    font-weight: 700;
+  }
+  .green{
+    color: rgb(3, 206, 3);
+  }
+  .underline{
+    text-decoration: underline;
+  }

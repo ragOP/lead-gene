@@ -1,20 +1,9 @@
 // src/App.js
-import React from 'react';
-import './style.css';
+import React from "react";
+import Home from "./components/Home";
 
 const App = () => {
-  return (
-    <div>
-      <nav className="top-nav">
-      <p>America’s #1 Subsidy Newsletter for Seniors </p>
-      </nav>
-      <div className="second-div">
-      
-      </div>
-
-      
-    </div>
-  );
-}
+  return <Home />;
+};
 
 export default App;
