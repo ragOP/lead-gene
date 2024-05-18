@@ -5,6 +5,7 @@ import call from "../assests/call.png";
 import main from "../assests/main.PNG";
 import badge from "../assests/badge.GIF";
 import dot from "../assests/dot.GIF";
+import hand from "../assests/hand.GIF";
 
 const Home = () => {
   return (
@@ -24,6 +25,31 @@ const Home = () => {
           Before 9 P.M. Tonight!
         </p>
         <img src={main} alt="" className="main-img" />
+      </div>
+      <div className="quiz">
+        <div className="quiz-main">
+          <div className="quiz-top">
+            <p>
+              ANSWER THE QUESTIONS BELOW TO CLAIM YOUR{" "}
+              <span>$900 FOOD ALLOWANCE CARD:</span>
+            </p>
+          </div>
+          <div className="quiz-loader"></div>
+          <div className="quiz-ques">1. Are you over the age of 64?</div>
+          <div className="quiz-yes">
+            YES, I'M 65 OR OLDER
+            <img className="hand" src={hand} alt="" />
+          </div>
+          <div className="quiz-no">NO, I'M 64 OR YOUNGER</div>
+          <div className="footer">
+            <img src={dot} alt="" className="gif" />
+            <p className="txt">
+              OVER <span className="green">9,328</span> SENIORS HAVE CLAIMED
+              THEIR FOOD ALLOWANCE CARD IN{" "}
+              <span className="underline">LAST 60 MINUTES</span>
+            </p>
+          </div>
+        </div>
       </div>
       <div className="place-main">
         <div className="place">
@@ -55,7 +81,7 @@ const Home = () => {
       <div className="btn-main">
         <p>CLAIM YOURS NOW</p>
       </div>
-      <div className="footer">
+      <div className="footer" style={{ padding: "0px 50px" }}>
         <img src={dot} alt="" className="gif" />
         <p className="txt">
           OVER <span className="green">9,328</span> SENIORS HAVE CLAIMED THEIR

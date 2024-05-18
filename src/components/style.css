@@ -78,7 +78,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 30px 20px;
+    padding: 30px 20px; 
   }
   .lower-box{
     background-color: #2061b7;
@@ -86,6 +86,7 @@
     width: 100%;
     border-radius: 20px;
     padding: 20px;
+    box-shadow: 0 -5px 0 yellow;  
   }
   .top{
     font-size: 18px;
@@ -128,7 +129,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 0px 50px;
+    padding: 0px 30px;
     gap: 10px;
     font-size: 12px;
     margin-top: 20px;
@@ -145,4 +146,53 @@
   }
   .underline{
     text-decoration: underline;
+  }
+  .quiz{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .quiz-main{
+    width: 100%;
+    margin: 10px 20px;
+    text-align: center;
+    background-color: #F2F2F2;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 7px 0px 0px #2061b7;  
+  }
+  .quiz-top{
+    background: #2061b7;
+    color: #fff;
+    padding: 8px 15px;
+  }
+  .quiz-top > p {
+    font-size: 14px;
+    font-weight: 500;
+    
+  }
+  .quiz-top > p > span {
+    color: yellow;
+  }
+  .quiz-ques{
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  .quiz-yes, .quiz-no{
+    background-color: rgb(4, 214, 4);
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 10px;
+    font-weight: 600;
+  }
+  .hand{
+    width: 60px;
+    position: absolute;
+    right: 40px;
   }
