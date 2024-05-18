@@ -196,3 +196,22 @@
     position: absolute;
     right: 40px;
   }
+  .quiz-loader {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: #4caf50;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .loader-dot {
+    position: absolute;
+    top: -3px;
+    left: 10%;
+    width: 16px;
+    height: 16px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+  

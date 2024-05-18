@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import logo from "../assests/logo.png";
 import call from "../assests/call.png";
@@ -8,6 +8,64 @@ import dot from "../assests/dot.GIF";
 import hand from "../assests/hand.GIF";
 
 const Home = () => {
+  const [quiz, setQuiz] = useState("1. Are you over the age of 64?");
+  const [yes, setYes] = useState("YES, I'M 65 OR OLDER");
+  const [no, setNo] = useState("NO, I'M 64 OR YOUNGER");
+  const [count, setCount] = useState(1);
+
+  const handleNo = () => {
+    setQuiz("2. Are you over the age of 70?");
+    setYes("YES, I'M 70 OR OLDER");
+    setNo("NO, I'M 70 OR YOUNGER");
+  };
+
+  const handleYes = () => {
+    if (count === 1) {
+      setQuiz("2. Are you over the age of 80?");
+      setYes("YES, I'M 80 OR OLDER");
+      setNo("NO, I'M 80 OR YOUNGER");
+      setCount(2);
+    } else if (count === 2) {
+      setQuiz("3. Are you over the age of 90?");
+      setYes("YES, I'M 90 OR OLDER");
+      setNo("NO, I'M 90 OR YOUNGER");
+      setCount(3);
+    } else if (count === 3) {
+      // Assuming you want to complete the quiz at count 4
+      setCount(4);
+    }
+  };
+
+  const getLoaderWidth = () => {
+    switch (count) {
+      case 1:
+        return "10%";
+      case 2:
+        return "40%";
+      case 3:
+        return "70%";
+      case 4:
+        return "100%";
+      default:
+        return "0%";
+    }
+  };
+
+  const getDotWidth = () => {
+    switch (count) {
+      case 1:
+        return "60%";
+      case 2:
+        return "89%";
+      case 3:
+        return "95%";
+      case 4:
+        return "96%";
+      default:
+        return "0%";
+    }
+  };
+
   return (
     <div>
       <nav className="top-nav">
@@ -34,13 +92,17 @@ const Home = () => {
               <span>$900 FOOD ALLOWANCE CARD:</span>
             </p>
           </div>
-          <div className="quiz-loader"></div>
-          <div className="quiz-ques">1. Are you over the age of 64?</div>
-          <div className="quiz-yes">
-            YES, I'M 65 OR OLDER
+          <div className="quiz-loader" style={{ width: getLoaderWidth() }}>
+            <div className="loader-dot" style={{ left: getDotWidth() }}></div>
+          </div>
+          <div className="quiz-ques">{quiz}</div>
+          <div className="quiz-yes" onClick={handleYes}>
+            {yes}
             <img className="hand" src={hand} alt="" />
           </div>
-          <div className="quiz-no">NO, I'M 64 OR YOUNGER</div>
+          <div className="quiz-no" onClick={handleNo}>
+            {no}
+          </div>
           <div className="footer">
             <img src={dot} alt="" className="gif" />
             <p className="txt">
