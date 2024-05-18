@@ -51,16 +51,16 @@ const Home = () => {
     }
   };
 
-  const getDotWidth = () => {
+  const getDotLeftPosition = () => {
     switch (count) {
       case 1:
-        return "60%";
+        return "10%";
       case 2:
-        return "89%";
+        return "40%";
       case 3:
-        return "95%";
+        return "70%";
       case 4:
-        return "96%";
+        return "100%";
       default:
         return "0%";
     }
@@ -92,8 +92,15 @@ const Home = () => {
               <span>$900 FOOD ALLOWANCE CARD:</span>
             </p>
           </div>
-          <div className="quiz-loader" style={{ width: getLoaderWidth() }}>
-            <div className="loader-dot" style={{ left: getDotWidth() }}></div>
+          <div className="quiz-loader">
+            <div
+              className="inner-loader"
+              style={{ width: getLoaderWidth() }}
+            ></div>
+            <div
+              className="loader-dot"
+              style={{ left: getDotLeftPosition() }}
+            ></div>
           </div>
           <div className="quiz-ques">{quiz}</div>
           <div className="quiz-yes" onClick={handleYes}>
