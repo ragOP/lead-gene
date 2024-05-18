@@ -103,7 +103,7 @@ const Home = () => {
           <div className="quiz-no" onClick={handleNo}>
             {no}
           </div>
-          <div className="footer">
+          <div className="footer" style={{ textAlign: "start" }}>
             <img src={dot} alt="" className="gif" />
             <p className="txt">
               OVER <span className="green">9,328</span> SENIORS HAVE CLAIMED
