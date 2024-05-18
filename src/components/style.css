@@ -14,7 +14,7 @@
     text-align: center;
   }
   .second-div {
-    background: linear-gradient(to right, #BCCCE8, #87A5D7);
+    background: linear-gradient(to bottom, #BCCCE8, #87A5D7);
     color: white;
     padding: 10px 10px;
     display: flex;
