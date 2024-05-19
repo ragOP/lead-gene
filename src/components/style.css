@@ -50,7 +50,7 @@
     width: 100%;
   }
   .main-title > span {
-    background-color: yellow;
+    background-color: #FFDE59;
   }
   .place-main{
     display: flex;
@@ -86,14 +86,14 @@
     width: 100%;
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 -5px 0 yellow;  
+    box-shadow: 0 -5px 0 #FFDE59;  
   }
   .top{
     font-size: 18px;
     margin-bottom: 50px;
   }
   .top > span {
-    color: yellow;
+    color: #FFDE59;
     font-style: italic;
     font-weight: 600;
   }
@@ -106,7 +106,7 @@
     font-size: 18px;
   }
   .bottom > span {
-    color: yellow;
+    color: #FFDE59;
     font-style: italic;
     font-weight: 600;
   }
@@ -173,7 +173,7 @@
     
   }
   .quiz-top > p > span {
-    color: yellow;
+    color: #FFDE59;
   }
   .quiz-ques{
     font-size: 24px;
@@ -236,11 +236,11 @@
     font-weight: 800;
   }
   .bottom-cong-txt > span {
-    background-color: yellow;
+    background-color: #FFDE59;
     font-style: italic;
   }
   .bottom-spot{
-    background-color: yellow;
+    background-color: #FFDE59;
     width: 170px;
     margin-top: 20px;
     font-size: 16px;
@@ -319,4 +319,52 @@
   }
   .baarish > img {
     width: 100%;
+  }
+  .review{
+    width: 100%;
+  }
+  .first{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 80%;
+    background: #2061b7;
+    padding: 10px;
+    gap: 10px;
+    font-size: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #fff;
+    margin-top: 50px;
+    border-right: 2px solid #24da2a;
+  }
+  .first > img {
+    width: 10px;
+  }
+  .second{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 80%;
+    background: #2061b7;
+    padding: 10px;
+    gap: 10px;
+    font-size: 14px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #fff;
+    margin-left: 20%;
+    margin-top: 50px;
+    border-left: 2px solid #24da2a;
+  }
+  .second > img {
+    width: 10px;
+  }
+  .first > p > span {
+    color: #24da2a;
+    font-style: italic;
+  }
+  .second > p > span {
+    color: #24da2a;
+    font-style: italic;
   }

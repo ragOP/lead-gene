@@ -188,6 +188,36 @@ const Home = () => {
         </div>
       )}
       {eligible === true && <img src={main2} alt="" className="main-img" />}
+
+      {eligible === true && (
+        <div className="review">
+          <div className="first">
+            <img src={dot} alt="" />
+            <p>
+              OVER <span>9,328</span> SENIORS HAVE CLAIMED THEIR FOOD ALLOWANCE
+              CARD IN{" "}
+              <span style={{ textDecoration: "underline", color: "#fff" }}>
+                LAST 60 MINUTES
+              </span>
+            </p>
+          </div>
+          <div className="second">
+            <img src={dot} alt="" />
+            <p>
+              THESE $900 CAN BE SPENT ON GROCERY, GAS, ANY UTILITY BILL, REST
+              AND <span>AT MORE THAN 1000+ STORES</span> LIKE WALMART, TARGET,
+              ETC NATIONWIDE.
+            </p>
+          </div>
+          <div className="first">
+            <img src={dot} alt="" />
+            <p>
+              OFFICIAL HOTLINE TO CLAIM THIS BENEFIT WILL CLOSE AT{" "}
+              <span>9 P.M., 17TH JULY, 2024.</span>
+            </p>
+          </div>
+        </div>
+      )}
       {eligible === true && (
         <div className="senior">SEE WHAT SENIORS HAVE TO SAY:</div>
       )}
