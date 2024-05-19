@@ -7,6 +7,7 @@ import main2 from "../assests/main2.png";
 import badge from "../assests/badge.GIF";
 import dot from "../assests/dot.GIF";
 import hand from "../assests/hand.GIF";
+import barish from "../assests/baarish.GIF";
 
 const Home = () => {
   const [quiz, setQuiz] = useState("1. Are you over the age of 64?");
@@ -14,38 +15,56 @@ const Home = () => {
   const [no, setNo] = useState("NO, I'M 64 OR YOUNGER");
   const [count, setCount] = useState(1);
   const [eligible, setEligible] = useState(null);
+  const [slide, setSlide] = useState("");
+  const [congratulations, SetCongratulations] = useState(true);
 
   const handleNo = () => {
-    if (count === 1) {
-      setQuiz("2. Are you over the age of 70?");
-      setYes("YES, I'M 70 OR OLDER");
-      setNo("NO, I'M 70 OR YOUNGER");
-    } else {
-      setEligible(false);
-    }
+    setSlide("slide-left");
+    setTimeout(() => {
+      if (count === 1) {
+        setQuiz("2. Are you over the age of 70?");
+        setYes("YES, I'M 70 OR OLDER");
+        setNo("NO, I'M 70 OR YOUNGER");
+      } else {
+        setEligible(false);
+      }
+    }, 500);
   };
 
+  if (eligible === true) {
+    setTimeout(() => {
+      SetCongratulations(false);
+    }, 2000);
+  }
+
   const handleYes = () => {
-    if (count === 1) {
-      setQuiz("2. Are you over the age of 80?");
-      setYes("YES, I'M 80 OR OLDER");
-      setNo("NO, I'M 80 OR YOUNGER");
-      setCount(2);
-    } else if (count === 2) {
-      setQuiz("3. Are you over the age of 90?");
-      setYes("YES, I'M 90 OR OLDER");
-      setNo("NO, I'M 90 OR YOUNGER");
-      setCount(3);
-    } else if (count === 3) {
-      setCount(4);
-      setTimeout(() => {
-        setEligible(true);
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }, 1500);
-    }
+    setSlide("slide-left");
+    setTimeout(() => {
+      if (count === 1) {
+        setQuiz("2. Are you over the age of 80?");
+        setYes("YES, I'M 80 OR OLDER");
+        setNo("NO, I'M 80 OR YOUNGER");
+        setCount(2);
+      } else if (count === 2) {
+        setQuiz("3. Are you over the age of 90?");
+        setYes("YES, I'M 90 OR OLDER");
+        setNo("NO, I'M 90 OR YOUNGER");
+        setCount(3);
+      } else if (count === 3) {
+        setCount(4);
+        setTimeout(() => {
+          setEligible(true);
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }, 500);
+      }
+      setSlide("slide-mid");
+    }, 10);
+    setTimeout(() => {
+      setSlide("slide-right");
+    }, 100);
   };
 
   const getLoaderWidth = () => {
@@ -87,6 +106,13 @@ const Home = () => {
         <img src={logo} alt="" className="logo" />
         <img src={call} alt="" className="call-now" />
       </div>
+      {eligible === true && congratulations === true ? (
+        <div className="baarish">
+          <img src={barish} alt="" />
+        </div>
+      ) : (
+        <></>
+      )}
       {eligible === null ? (
         <div className="main-div">
           <img src={badge} alt="" />
@@ -125,7 +151,7 @@ const Home = () => {
       )}
       {eligible === null && (
         <div className="quiz">
-          <div className="quiz-main">
+          <div className={`quiz-main ${slide}`}>
             <div className="quiz-top">
               <p>
                 ANSWER THE QUESTIONS BELOW TO CLAIM YOUR{" "}
