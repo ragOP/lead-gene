@@ -3,6 +3,7 @@ import "./style.css";
 import logo from "../assests/logo.png";
 import call from "../assests/call.png";
 import main from "../assests/main.PNG";
+import main2 from "../assests/main2.png";
 import badge from "../assests/badge.GIF";
 import dot from "../assests/dot.GIF";
 import hand from "../assests/hand.GIF";
@@ -97,8 +98,29 @@ const Home = () => {
           <img src={main} alt="" className="main-img" />
         </div>
       ) : (
-        <div>
-          <h1>Mai kya hello jee!!</h1>
+        <div className="cong-top">
+          <div className="border">CONGRATULATIONS, YOU QUALIFY!</div>
+          <div className="bottom-cong" style={{ marginTop: "0" }}>
+            <p className="bottom-cong-txt">
+              MAKE A QUICK CALL TO CLAIM YOUR <span>FOOD ALLOWANCE CARD!</span>
+            </p>
+            <p className="bottom-spot">
+              Spots Remaining: <span>4</span>
+            </p>
+            <p className="tap-to-call">TAP BELOW TO CALL</p>
+            <div
+              className="quiz-yes"
+              style={{ textAlign: "center", padding: "20px 30px" }}
+            >
+              CALL (844) 372-213
+              <img className="hand" src={hand} alt="" />
+            </div>
+            <p className="below">We Have Reserved Your Spot</p>
+            <p className="bottom-below">
+              Due to high call volume, your official agent is waiting for only 3
+              minutes, then your spot will not be reserved.
+            </p>
+          </div>
         </div>
       )}
       {eligible === null && (
@@ -139,6 +161,7 @@ const Home = () => {
           </div>
         </div>
       )}
+      {eligible === true && <img src={main2} alt="" className="main-img" />}
       {eligible === true && (
         <div className="senior">SEE WHAT SENIORS HAVE TO SAY:</div>
       )}
