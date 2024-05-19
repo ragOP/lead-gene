@@ -136,7 +136,7 @@ const Home = () => {
             <p className="tap-to-call">TAP BELOW TO CALL</p>
             <div
               className="quiz-yes"
-              style={{ textAlign: "center", padding: "20px 30px" }}
+              style={{ textAlign: "center", padding: "20px" }}
             >
               CALL (844) 372-213
               <img className="hand" src={hand} alt="" />
@@ -276,7 +276,7 @@ const Home = () => {
           <p className="tap-to-call">TAP BELOW TO CALL</p>
           <div
             className="quiz-yes"
-            style={{ textAlign: "center", padding: "20px 30px" }}
+            style={{ textAlign: "center", padding: "20px" }}
           >
             CALL (844) 372-213
             <img className="hand" src={hand} alt="" />
