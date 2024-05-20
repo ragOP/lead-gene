@@ -7,11 +7,10 @@ import main2 from "../assests/main2.png";
 import badge from "../assests/badge.GIF";
 import dot from "../assests/dot.GIF";
 import hand from "../assests/hand.GIF";
-import one from "../assests/1.png";
-import two from "../assests/2.png";
-import three from "../assests/3.png";
-import four from "../assests/4.png";
-import five from "../assests/5.png";
+import one from "../assests/one.PNG";
+import two from "../assests/two.PNG";
+import three from "../assests/three.PNG";
+import four from "../assests/four.PNG";
 import barish from "../assests/baarish.GIF";
 
 const Home = () => {
@@ -24,13 +23,12 @@ const Home = () => {
   const [congratulations, SetCongratulations] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = [one, two, three, four, five];
+  const images = [one, two, three, four];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-     
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); 
+    }, 4000);
 
     return () => clearInterval(intervalId); // Cleanup interval on unmount
   }, [images.length]);

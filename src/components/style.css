@@ -386,11 +386,15 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    padding: 0px 25px;
+    padding-top: 20px;
   }
   
   .carousel-image {
     width: 100%;
     height: auto;
+
+    border-radius: 20px;
   }
   
   /* Optional: Add styles for arrows or indicators */
@@ -435,4 +439,6 @@
   .carousel-indicator.active {
     background-color: #333;
   }
+
+  
   
