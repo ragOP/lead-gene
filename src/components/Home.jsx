@@ -191,7 +191,11 @@ const Home = () => {
               {no}
             </div>
             <div className="footer" style={{ textAlign: "start" }}>
-              <img src={dot} alt="" className="gif" />
+              <span class="ping-container">
+                <span class="ping">
+                  <span class="pingball"></span>
+                </span>
+              </span>
               <p className="txt">
                 OVER <span className="green">9,328</span> SENIORS HAVE CLAIMED
                 THEIR FOOD ALLOWANCE CARD IN{" "}
@@ -206,7 +210,11 @@ const Home = () => {
       {eligible === true && (
         <div className="review">
           <div className="first">
-            <img src={dot} alt="" />
+            <span class="ping-container">
+              <span class="ping">
+                <span class="pingball"></span>
+              </span>
+            </span>
             <p>
               OVER <span>9,328</span> SENIORS HAVE CLAIMED THEIR FOOD ALLOWANCE
               CARD IN{" "}
@@ -216,7 +224,11 @@ const Home = () => {
             </p>
           </div>
           <div className="second">
-            <img src={dot} alt="" />
+            <span class="ping-container">
+              <span class="ping">
+                <span class="pingball"></span>
+              </span>
+            </span>
             <p>
               THESE $900 CAN BE SPENT ON GROCERY, GAS, ANY UTILITY BILL, REST
               AND <span>AT MORE THAN 1000+ STORES</span> LIKE WALMART, TARGET,
@@ -224,7 +236,11 @@ const Home = () => {
             </p>
           </div>
           <div className="first">
-            <img src={dot} alt="" />
+            <span class="ping-container">
+              <span class="ping">
+                <span class="pingball"></span>
+              </span>
+            </span>
             <p>
               OFFICIAL HOTLINE TO CLAIM THIS BENEFIT WILL CLOSE AT{" "}
               <span>9 P.M., 17TH JULY, 2024.</span>
@@ -282,7 +298,11 @@ const Home = () => {
       )}
       {eligible === null && (
         <div className="footer" style={{ padding: "0px 50px" }}>
-          <img src={dot} alt="" className="gif" />
+          <span class="ping-container">
+            <span class="ping">
+              <span class="pingball"></span>
+            </span>
+          </span>
           <p className="txt">
             OVER <span className="green">9,328</span> SENIORS HAVE CLAIMED THEIR
             FOOD ALLOWANCE CARD IN{" "}
