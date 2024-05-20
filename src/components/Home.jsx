@@ -118,8 +118,8 @@ const Home = () => {
           <img src={badge} alt="" />
           <p className="main-title">
             Final Call For Seniors To Claim <br />
-            Their <span>$9000 Food Allowance Card  </span> 
-            Before 9 P.M. Tonight! 
+            Their <span>$9000 Food Allowance Card</span> 
+            &nbsp;Before 9 P.M. Tonight! 
           </p>
           <img src={main} alt="" className="main-img" />
         </div>
@@ -139,7 +139,7 @@ const Home = () => {
               style={{ textAlign: "center", padding: "20px" }}
             >
               CALL (844) 372-213
-              <img className="hand" src={hand} alt="" />
+              <img className="hand-congo" src={hand} alt="" />
             </div>
             <p className="below">We Have Reserved Your Spot</p>
             <p className="bottom-below">
@@ -222,13 +222,15 @@ const Home = () => {
         <div className="senior">SEE WHAT SENIORS HAVE TO SAY:</div>
       )}
       
-      <div className="place-main">
+      {/* <div className="place-main">
 
         
         <div className="place">
           <p>PLACE FOR REVIEW WIDGET</p>
         </div>
-      </div>
+      </div> */}
+
+      
       {eligible === null && (
         <div className="main-lower">
           <div className="lower-box">
@@ -282,7 +284,7 @@ const Home = () => {
             style={{ textAlign: "center", padding: "29px" }}
           >
             CALL (844) 372-213
-            <img className="hand-congo" src={hand} alt="" />
+            <img className="hand" src={hand} alt="" />
           </div>
           <p className="below">We Have Reserved Your Spot</p>
           <p className="bottom-below">
