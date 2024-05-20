@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import logo from "../assests/logo.png";
-import call from "../assests/call.png";
+import call from "../assests/shadow.png";
 import main from "../assests/main.PNG";
 import main2 from "../assests/main2.png";
 import badge from "../assests/badge.GIF";
@@ -118,8 +118,8 @@ const Home = () => {
           <img src={badge} alt="" />
           <p className="main-title">
             Final Call For Seniors To Claim <br />
-            Their <span>$9000 Food Allowance Card</span> <br />
-            Before 9 P.M. Tonight!
+            Their <span>$9000 Food Allowance Card  </span> 
+            Before 9 P.M. Tonight! 
           </p>
           <img src={main} alt="" className="main-img" />
         </div>
@@ -221,7 +221,10 @@ const Home = () => {
       {eligible === true && (
         <div className="senior">SEE WHAT SENIORS HAVE TO SAY:</div>
       )}
+      
       <div className="place-main">
+
+        
         <div className="place">
           <p>PLACE FOR REVIEW WIDGET</p>
         </div>
@@ -276,10 +279,10 @@ const Home = () => {
           <p className="tap-to-call">TAP BELOW TO CALL</p>
           <div
             className="quiz-yes"
-            style={{ textAlign: "center", padding: "20px" }}
+            style={{ textAlign: "center", padding: "29px" }}
           >
             CALL (844) 372-213
-            <img className="hand" src={hand} alt="" />
+            <img className="hand-congo" src={hand} alt="" />
           </div>
           <p className="below">We Have Reserved Your Spot</p>
           <p className="bottom-below">
