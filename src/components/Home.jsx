@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import logo from "../assests/logo.png";
 import call from "../assests/shadow.png";
@@ -7,6 +7,11 @@ import main2 from "../assests/main2.png";
 import badge from "../assests/badge.GIF";
 import dot from "../assests/dot.GIF";
 import hand from "../assests/hand.GIF";
+import one from "../assests/1.png";
+import two from "../assests/2.png";
+import three from "../assests/3.png";
+import four from "../assests/4.png";
+import five from "../assests/5.png";
 import barish from "../assests/baarish.GIF";
 
 const Home = () => {
@@ -17,7 +22,18 @@ const Home = () => {
   const [eligible, setEligible] = useState(null);
   const [slide, setSlide] = useState("");
   const [congratulations, SetCongratulations] = useState(true);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const images = [one, two, three, four, five];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+     
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000); 
+
+    return () => clearInterval(intervalId); // Cleanup interval on unmount
+  }, [images.length]);
   const handleNo = () => {
     setSlide("slide-left");
     setTimeout(() => {
@@ -118,8 +134,8 @@ const Home = () => {
           <img src={badge} alt="" />
           <p className="main-title">
             Final Call For Seniors To Claim <br />
-            Their <span>$9000 Food Allowance Card</span> 
-            &nbsp;Before 9 P.M. Tonight! 
+            Their <span>$9000 Food Allowance Card</span>
+            &nbsp;Before 9 P.M. Tonight!
           </p>
           <img src={main} alt="" className="main-img" />
         </div>
@@ -221,7 +237,14 @@ const Home = () => {
       {eligible === true && (
         <div className="senior">SEE WHAT SENIORS HAVE TO SAY:</div>
       )}
-      
+
+      <div className="carousel">
+        <img
+          src={images[currentImageIndex]}
+          alt={`Image ${currentImageIndex + 1}`}
+          className="carousel-image"
+        />
+      </div>
       {/* <div className="place-main">
 
         
@@ -230,7 +253,6 @@ const Home = () => {
         </div>
       </div> */}
 
-      
       {eligible === null && (
         <div className="main-lower">
           <div className="lower-box">

@@ -382,3 +382,57 @@
     color: #24da2a;
     font-style: italic;
   }
+  .carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Optional: Add styles for arrows or indicators */
+  /* You can customize these styles further as needed */
+  
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    padding: 8px;
+    border-radius: 50%;
+  }
+  
+  .carousel-arrow.left {
+    left: 10px;
+  }
+  
+  .carousel-arrow.right {
+    right: 10px;
+  }
+  
+  .carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  
+  .carousel-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .carousel-indicator.active {
+    background-color: #333;
+  }
+  
