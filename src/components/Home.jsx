@@ -21,6 +21,8 @@ const Home = () => {
   const [slide, setSlide] = useState("");
   const [congratulations, SetCongratulations] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [step, setStep] = useState("process");
+  const [ifYes, setIfYes] = useState(null);
 
   const images = [one, two, three, four];
 
@@ -68,13 +70,8 @@ const Home = () => {
         setCount(3);
       } else if (count === 3) {
         setCount(4);
-        setTimeout(() => {
-          setEligible(true);
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        }, 500);
+        setIfYes(true);
+        setStep("Reviewing Your Answers...");
       }
       setSlide("slide-mid");
     }, 10);
@@ -82,6 +79,31 @@ const Home = () => {
       setSlide("slide-right");
     }, 100);
   };
+
+  const stepProcess = () => {
+    if (step === "Reviewing Your Answers...") {
+      setTimeout(() => {
+        setStep("Matching With Best Options...");
+      }, 1500);
+    }
+    if (step === "Matching With Best Options...") {
+      setTimeout(() => {
+        setStep("Confirming Eligibility...");
+      }, 1500);
+    }
+    if (step === "Confirming Eligibility...") {
+      setTimeout(() => {
+        setStep("completed");
+        if (ifYes) {
+          setEligible(true);
+        }
+      }, 1500);
+    }
+  };
+
+  useEffect(() => {
+    stepProcess();
+  }, [ifYes, step]);
 
   const getLoaderWidth = () => {
     switch (count) {
@@ -122,14 +144,19 @@ const Home = () => {
         <img src={logo} alt="" className="logo" />
         <img src={call} alt="" className="call-now" />
       </div>
-      {eligible === true && congratulations === true ? (
+      {eligible === null && step !== "process" && step !== "completed" ? (
+        <div className="checking" style={{ fontWeight: "700" }}>
+          {step}
+        </div>
+      ) : (
+        ""
+      )}
+      {eligible === true && congratulations === true && (
         <div className="baarish">
           <img src={barish} alt="" />
         </div>
-      ) : (
-        <></>
       )}
-      {eligible === null ? (
+      {eligible === null && step === "process" && (
         <div className="main-div">
           <img src={badge} alt="" />
           <p className="main-title">
@@ -139,7 +166,8 @@ const Home = () => {
           </p>
           <img src={main} alt="" className="main-img" />
         </div>
-      ) : (
+      )}
+      {eligible === true && step === "completed" && (
         <div className="cong-top">
           <div className="border">CONGRATULATIONS, YOU QUALIFY!</div>
           <div className="bottom-cong" style={{ marginTop: "0" }}>
@@ -165,7 +193,7 @@ const Home = () => {
           </div>
         </div>
       )}
-      {eligible === null && (
+      {eligible === null && step === "process" && (
         <div className="quiz">
           <div className={`quiz-main ${slide}`}>
             <div className="quiz-top">
@@ -254,13 +282,24 @@ const Home = () => {
         <div className="senior">SEE WHAT SENIORS HAVE TO SAY:</div>
       )}
 
-      <div className="carousel">
-        <img
-          src={images[currentImageIndex]}
-          alt={`Img ${currentImageIndex + 1}`}
-          className="carousel-image"
-        />
-      </div>
+      {eligible === true && step === "process" && (
+        <div className="carousel">
+          <img
+            src={images[currentImageIndex]}
+            alt={`Img ${currentImageIndex + 1}`}
+            className="carousel-image"
+          />
+        </div>
+      )}
+      {eligible === null && step === "process" && (
+        <div className="carousel">
+          <img
+            src={images[currentImageIndex]}
+            alt={`Img ${currentImageIndex + 1}`}
+            className="carousel-image"
+          />
+        </div>
+      )}
       {/* <div className="place-main">
 
         
@@ -269,7 +308,7 @@ const Home = () => {
         </div>
       </div> */}
 
-      {eligible === null && (
+      {eligible === null && step === "process" && (
         <div className="main-lower">
           <div className="lower-box">
             <p className="top">
@@ -293,12 +332,12 @@ const Home = () => {
           </div>
         </div>
       )}
-      {eligible === null && (
+      {eligible === null && step === "process" && (
         <div className="btn-main">
           <p>CLAIM YOURS NOW</p>
         </div>
       )}
-      {eligible === null && (
+      {eligible === null && step === "process" && (
         <div className="footer" style={{ padding: "0px 50px" }}>
           <span class="ping-container">
             <span class="ping">

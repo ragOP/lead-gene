@@ -485,31 +485,20 @@
         opacity: 0;
     }
    }
-
-   .popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-inner {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+   .checking{
     text-align: center;
-}
-
-.popup-inner button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-}
+    padding: 1.5rem;
+    background-color:#e9f2ff;
+    border-top: 2px solid rgb(59 130 246);
+    margin: 1rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #1f2937;
+    margin:1.25rem 1rem;
+  }
 
    
   
