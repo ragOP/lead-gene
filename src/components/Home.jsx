@@ -22,7 +22,6 @@ const Home = () => {
   const [slide, setSlide] = useState("");
   const [congratulations, SetCongratulations] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showExitPopup, setShowExitPopup] = useState(false);
 
   const images = [one, two, three, four];
 
@@ -31,32 +30,22 @@ const Home = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 4000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
-  }, [images.length]);
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
 
-  const handleBeforeUnload = (event) => {
-    event.preventDefault();
-    setShowExitPopup(true);
-    return (event.returnValue = "Are you sure you want to exit?");
-  };
-
-  useEffect(() => {
-    window.addEventListener("beforeunload", handleBeforeUnload);
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      window.addEventListener("beforeunload", handleBeforeUnload);
+    }
 
     return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
+      clearInterval(intervalId);
+      if (/Mobi|Android/i.test(navigator.userAgent)) {
+        window.removeEventListener("beforeunload", handleBeforeUnload);
+      }
     };
-  }, []);
-
-  const handleYesClick = () => {
-    setShowExitPopup(false);
-    window.removeEventListener("beforeunload", handleBeforeUnload);
-    window.close();
-  };
-
-  const handleNoClick = () => {
-    setShowExitPopup(false);
-  };
+  }, [images.length]);
 
   const handleNo = () => {
     setSlide("slide-left");
@@ -142,15 +131,6 @@ const Home = () => {
       <nav className="top-nav">
         <p>America’s #1 Subsidy Newsletter for Seniors </p>
       </nav>
-      {showExitPopup && (
-        <div className="popup">
-          <div className="popup-inner">
-            <h2>Are you sure you want to exit?</h2>
-            <button onClick={handleYesClick}>Yes</button>
-            <button onClick={handleNoClick}>No</button>
-          </div>
-        </div>
-      )}
       <div className="second-div">
         <img src={logo} alt="" className="logo" />
         <img src={call} alt="" className="call-now" />
