@@ -5,14 +5,13 @@ import call from "../assests/shadow.png";
 import main from "../assests/main.PNG";
 import main2 from "../assests/main2.png";
 import badge from "../assests/badge.GIF";
-import dot from "../assests/dot.GIF";
 import hand from "../assests/hand.GIF";
 import one from "../assests/one.PNG";
 import two from "../assests/two.PNG";
 import three from "../assests/three.PNG";
 import four from "../assests/four.PNG";
 import barish from "../assests/baarish.GIF";
-import useBeforeUnload from './useBeforeUnload'
+import useBeforeUnload from "./useBeforeUnload";
 
 const Home = () => {
   useBeforeUnload("Are you sure you want to exit farish?");
@@ -32,20 +31,8 @@ const Home = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 4000);
 
-    const handleBeforeUnload = (event) => {
-      event.preventDefault();
-      event.returnValue = "";
-    };
-
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-      window.addEventListener("beforeunload", handleBeforeUnload);
-    }
-
     return () => {
       clearInterval(intervalId);
-      if (/Mobi|Android/i.test(navigator.userAgent)) {
-        window.removeEventListener("beforeunload", handleBeforeUnload);
-      }
     };
   }, [images.length]);
 
@@ -272,7 +259,7 @@ const Home = () => {
       <div className="carousel">
         <img
           src={images[currentImageIndex]}
-          alt={`Image ${currentImageIndex + 1}`}
+          alt={`Img ${currentImageIndex + 1}`}
           className="carousel-image"
         />
       </div>
