@@ -11,10 +11,8 @@ import two from "../assests/two.PNG";
 import three from "../assests/three.PNG";
 import four from "../assests/four.PNG";
 import barish from "../assests/baarish.GIF";
-import useBeforeUnload from "./useBeforeUnload";
 
 const Home = () => {
-  useBeforeUnload("Are you sure you want to exit farish?");
   const [quiz, setQuiz] = useState("1. Are you over the age of 64?");
   const [yes, setYes] = useState("YES, I'M 65 OR OLDER");
   const [no, setNo] = useState("NO, I'M 64 OR YOUNGER");
