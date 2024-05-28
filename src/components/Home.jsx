@@ -14,8 +14,8 @@ import barish from "../assests/baarish.GIF";
 
 const Home = () => {
   const [quiz, setQuiz] = useState("1. Are you over the age of 64?");
-  const [yes, setYes] = useState("YES, I'M 65 OR OLDER");
-  const [no, setNo] = useState("NO, I'M 64 OR YOUNGER");
+  const [yes, setYes] = useState("YES");
+  const [no, setNo] = useState("NO");
   const [count, setCount] = useState(1);
   const [eligible, setEligible] = useState(null);
   const [slide, setSlide] = useState("");
@@ -40,9 +40,9 @@ const Home = () => {
     setSlide("slide-left");
     setTimeout(() => {
       if (count === 1) {
-        setQuiz("2. Are you over the age of 70?");
-        setYes("YES, I'M 70 OR OLDER");
-        setNo("NO, I'M 70 OR YOUNGER");
+        setQuiz("2. Do you live in the United States?");
+        setYes("YES");
+        setNo("NO");
       } else {
         setEligible(false);
       }
@@ -59,14 +59,14 @@ const Home = () => {
     setSlide("slide-left");
     setTimeout(() => {
       if (count === 1) {
-        setQuiz("2. Are you over the age of 80?");
-        setYes("YES, I'M 80 OR OLDER");
-        setNo("NO, I'M 80 OR YOUNGER");
+        setQuiz("2. Do you live in the United States?");
+        setYes("YES");
+        setNo("NO");
         setCount(2);
       } else if (count === 2) {
-        setQuiz("3. Are you over the age of 90?");
-        setYes("YES, I'M 90 OR OLDER");
-        setNo("NO, I'M 90 OR YOUNGER");
+        setQuiz("3. Are you enrolled in Medicare Part A OR B");
+        setYes("YES");
+        setNo("NO");
         setCount(3);
       } else if (count === 3) {
         setCount(4);
@@ -161,7 +161,7 @@ const Home = () => {
           <img src={badge} alt="" />
           <p className="main-title">
             Final Call For Seniors To Claim <br />
-            Their <span>$9000 Food Allowance Card</span>
+            Their <span>$900 Food Allowance Card</span>
             &nbsp;Before 9 P.M. Tonight!
           </p>
           <img src={main} alt="" className="main-img" />
@@ -178,13 +178,16 @@ const Home = () => {
               Spots Remaining: <span>4</span>
             </p>
             <p className="tap-to-call">TAP BELOW TO CALL</p>
+            <a href="tel:+18446720874">
             <div
               className="quiz-yes"
               style={{ textAlign: "center", padding: "20px" }}
             >
-              CALL (844) 372-213
+              CALL (844) 672-0874
               <img className="hand-congo" src={hand} alt="" />
+             
             </div>
+            </a>
             <p className="below">We Have Reserved Your Spot</p>
             <p className="bottom-below">
               Due to high call volume, your official agent is waiting for only 3
