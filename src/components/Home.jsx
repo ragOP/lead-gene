@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef  } from "react";
 import "./style.css";
 import logo from "../assests/logo.png";
 import call from "../assests/shadow.png";
@@ -100,7 +100,14 @@ const Home = () => {
       }, 1500);
     }
   };
+  const quizRef = useRef(null);
 
+  const scrollToQuiz = () => {
+    console.log('sds');
+    if (quizRef.current) {
+      quizRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   useEffect(() => {
     stepProcess();
   }, [ifYes, step]);
@@ -344,8 +351,8 @@ const Home = () => {
         </div>
       )}
       {eligible === null && step === "process" && (
-        <div className="btn-main">
-          <p>CLAIM YOURS NOW</p>
+        <div className="btn-main" onClick={scrollToQuiz}>
+          <p>CLAIM YOURS NOW2</p>
         </div>
       )}
       {eligible === null && step === "process" && (
