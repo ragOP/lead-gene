@@ -178,7 +178,7 @@ const Home = () => {
               Spots Remaining: <span>4</span>
             </p>
             <p className="tap-to-call">TAP BELOW TO CALL</p>
-            <a href="tel:+18446720874">
+            <a href="tel:+18446720874" style={{ textDecoration: "none" }}>
             <div
               className="quiz-yes"
               style={{ textAlign: "center", padding: "20px" }}
@@ -284,7 +284,15 @@ const Home = () => {
       {eligible === true && (
         <div className="senior">SEE WHAT SENIORS HAVE TO SAY:</div>
       )}
-
+   {eligible === true  && (
+        <div className="carousel">
+          <img
+            src={images[currentImageIndex]}
+            alt={`Img ${currentImageIndex + 1}`}
+            className="carousel-image"
+          />
+        </div>
+      )}
       {eligible === true && step === "process" && (
         <div className="carousel">
           <img
