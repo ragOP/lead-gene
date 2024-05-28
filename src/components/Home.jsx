@@ -103,10 +103,9 @@ const Home = () => {
   const quizRef = useRef(null);
 
   const scrollToQuiz = () => {
-    console.log('sds');
-    if (quizRef.current) {
-      quizRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+   
+      window.scrollTo({ top: 300, behavior: "smooth" });
+   
   };
   useEffect(() => {
     stepProcess();
@@ -352,7 +351,7 @@ const Home = () => {
       )}
       {eligible === null && step === "process" && (
         <div className="btn-main" onClick={scrollToQuiz}>
-          <p>CLAIM YOURS NOW2</p>
+          <p>CLAIM YOURS NOW</p>
         </div>
       )}
       {eligible === null && step === "process" && (
