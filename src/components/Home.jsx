@@ -144,7 +144,7 @@ const Home = () => {
   return (
     <div>
       <nav className="top-nav">
-        <p>America’s #1 Subsidy Newsletter for Seniors </p>
+        <p>America’s #1 Newsletter for Seniors </p>
       </nav>
       <div className="second-div">
         <img src={logo} alt="" className="logo" />
