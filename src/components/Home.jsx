@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef  } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./style.css";
 import logo from "../assests/logo.png";
 import call from "../assests/shadow.png";
@@ -103,9 +103,7 @@ const Home = () => {
   const quizRef = useRef(null);
 
   const scrollToQuiz = () => {
-   
-      window.scrollTo({ top: 300, behavior: "smooth" });
-   
+    window.scrollTo({ top: 300, behavior: "smooth" });
   };
   useEffect(() => {
     stepProcess();
@@ -166,9 +164,9 @@ const Home = () => {
         <div className="main-div">
           <img src={badge} alt="" />
           <p className="main-title">
-            Final Call For Seniors To Claim <br />
-            Their <span>$900 Food Allowance Card</span>
-            &nbsp;Before 9 P.M. Tonight!
+            Americans on Medicare May Be Eligible For Up To{" "}
+            <span>$900 Grocery & Food Allowance </span> &nbsp;in 2024 Advantage
+            Plan!
           </p>
           <img src={main} alt="" className="main-img" />
         </div>
@@ -185,14 +183,13 @@ const Home = () => {
             </p>
             <p className="tap-to-call">TAP BELOW TO CALL</p>
             <a href="tel:+18446720874" style={{ textDecoration: "none" }}>
-            <div
-              className="quiz-yes"
-              style={{ textAlign: "center", padding: "20px" }}
-            >
-              CALL (844) 672-0874
-              <img className="hand-congo" src={hand} alt="" />
-             
-            </div>
+              <div
+                className="quiz-yes"
+                style={{ textAlign: "center", padding: "25px" }}
+              >
+                CALL (844) 672-0874
+                <img className="hand-congo" src={hand} alt="" />
+              </div>
             </a>
             <p className="below">We Have Reserved Your Spot</p>
             <p className="bottom-below">
@@ -230,16 +227,16 @@ const Home = () => {
               {no}
             </div>
             <div className="footer" style={{ textAlign: "start" }}>
-              <span class="ping-container">
+              {/* <span class="ping-container">
                 <span class="ping">
                   <span class="pingball"></span>
                 </span>
-              </span>
-              <p className="txt">
+              </span> */}
+              {/* <p className="txt">
                 OVER <span className="green">9,328</span> SENIORS HAVE CLAIMED
                 THEIR FOOD ALLOWANCE CARD IN{" "}
                 <span className="underline">LAST 60 MINUTES</span>
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -248,7 +245,7 @@ const Home = () => {
 
       {eligible === true && (
         <div className="review">
-          <div className="first">
+          {/* <div className="first">
             <span class="ping-container">
               <span class="ping">
                 <span class="pingball"></span>
@@ -261,7 +258,7 @@ const Home = () => {
                 LAST 60 MINUTES
               </span>
             </p>
-          </div>
+          </div> */}
           <div className="second">
             <span class="ping-container">
               <span class="ping">
@@ -290,7 +287,7 @@ const Home = () => {
       {eligible === true && (
         <div className="senior">SEE WHAT SENIORS HAVE TO SAY:</div>
       )}
-   {eligible === true  && (
+      {eligible === true && (
         <div className="carousel">
           <img
             src={images[currentImageIndex]}
@@ -356,16 +353,16 @@ const Home = () => {
       )}
       {eligible === null && step === "process" && (
         <div className="footer" style={{ padding: "0px 50px" }}>
-          <span class="ping-container">
+          {/* <span class="ping-container">
             <span class="ping">
               <span class="pingball"></span>
             </span>
-          </span>
-          <p className="txt">
+          </span> */}
+          {/* <p className="txt">
             OVER <span className="green">9,328</span> SENIORS HAVE CLAIMED THEIR
             FOOD ALLOWANCE CARD IN{" "}
             <span className="underline">LAST 60 MINUTES</span>
-          </p>
+          </p> */}
         </div>
       )}
       {eligible === true && (
