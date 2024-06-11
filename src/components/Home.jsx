@@ -164,7 +164,7 @@ const Home = () => {
         <div className="main-div">
           <img src={badge} alt="" />
           <p className="main-title">
-            Americans on Medicare May Be Eligible For Up To{" "}
+            Americans on Medicare Are Eligible For Up To
             <span>$900 Grocery & Food Allowance </span> &nbsp;in 2024 Advantage
             Plan!
           </p>
