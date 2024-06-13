@@ -169,7 +169,7 @@ const Home = () => {
           <img src={badge} alt="" />
           <p className="main-title">
            Americans Over 64 Must Claim Their &nbsp;
-            <span>$900 Food Allowance Card </span> &nbsp;Before It’s Too Late. Here’s How!
+            <span>$900 Food Allowance Card </span> &nbsp;Before It’s Too Late.
           </p>
           <img src={main} alt="" className="main-img" />
         </div>
