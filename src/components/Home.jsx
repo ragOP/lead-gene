@@ -146,7 +146,11 @@ const Home = () => {
       </nav>
       <div className="second-div">
         <img src={logo} alt="" className="logo" />
-        <img src={call} alt="" className="call-now" />
+        <a href="tel:+18446720874">
+  <img src={call} alt="" className="call-now" />
+</a>
+
+{/*         <img src={call} alt="" className="call-now" /> */}
       </div>
       {eligible === null && step !== "process" && step !== "completed" ? (
         <div className="checking" style={{ fontWeight: "700" }}>
