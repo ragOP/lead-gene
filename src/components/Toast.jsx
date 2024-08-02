@@ -11,7 +11,6 @@ import two from "../assests/two.PNG";
 import three from "../assests/three.PNG";
 import four from "../assests/four.PNG";
 import barish from "../assests/baarish.GIF";
-import addNotification from "react-push-notification";
 
 const Home = () => {
   const [quiz, setQuiz] = useState("1. Are you over the age of 64?");
@@ -27,16 +26,20 @@ const Home = () => {
 
   const images = [one, two, three, four];
 
-  const handleGetPushNotification = () =>{
-   addNotification({
-    title: 'Free Medicare',
-    message: 'THESE $900 CAN BE SPENT ON GROCERY, GAS, ANY UTILITY BILL, REST AND AT MORE THAN 1000+ STORES LIKE WALMART, TARGET, ETC NATIONWIDE.',
-    duration: 4000,
-    icon: main,
-    native: true
-   })
-  }
-
+  const handleGetPushNotification = () => {
+   if ('Notification' in window) {
+     Notification.requestPermission().then((perm) => {
+       if (perm === 'granted') {
+         new Notification('New Message from Heaven', {
+           body: 'Due to high call volume, your official agent is waiting for only 3, then your spot will not be reserved. Due to high call volume, your official agent is waiting for only 3, then your spot will not be reserved.',
+           icon: main,
+         });
+       }
+     }).catch(err => console.error('Notification permission request failed', err));
+   } else {
+     console.log('This browser does not support notifications.');
+   }
+ };
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
