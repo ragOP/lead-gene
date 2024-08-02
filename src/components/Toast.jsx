@@ -27,17 +27,19 @@ const Home = () => {
   const images = [one, two, three, four];
 
   const handleGetPushNotification = () => {
-   if ('Notification' in window) {
+   if ('Notification' in window && 'serviceWorker' in navigator) {
      Notification.requestPermission().then((perm) => {
        if (perm === 'granted') {
-         new Notification('New Message from Heaven', {
-           body: 'Due to high call volume, your official agent is waiting for only 3, then your spot will not be reserved. Due to high call volume, your official agent is waiting for only 3, then your spot will not be reserved.',
-           icon: main,
+         navigator.serviceWorker.ready.then(function(registration) {
+           registration.showNotification('New Message from Heaven', {
+             body: 'Hello From Heaven',
+             icon: main, // Ensure this path is correct
+           });
          });
        }
      }).catch(err => console.error('Notification permission request failed', err));
    } else {
-     console.log('This browser does not support notifications.');
+     console.log('This browser does not support notifications or service workers.');
    }
  };
   useEffect(() => {
